@@ -1,5 +1,0 @@
-[connections]                   
-accountname=<ignore>
-username=<>
-authenticator = "SNOWFLAKE_JWT"
-private_key_path = <>
