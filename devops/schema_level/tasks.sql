@@ -1,6 +1,6 @@
 -- task to merge pipeline results into target table
 
-USE SCHEMA gold_{{env}}_db.vacations;
+USE SCHEMA gold_{{env}}_db.gold;
 
 create or alter task vacation_spots_update
   schedule = '1440 minute'
@@ -87,4 +87,4 @@ alter task email_notification resume;
 
 
 -- manually initiate a full execution of the DAG
-execute task vacations.vacation_spots_update;
+execute task vacation_spots_update;

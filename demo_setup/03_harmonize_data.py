@@ -239,14 +239,14 @@ pipeline = [
 # entry point for PythonAPI
 
 PRIVATE_KEY_FILE = os.getenv("SNOWFLAKE_PRIVATE_KEY_FILE")
-connection_params= toml.load("../.snowflake/config.toml")['connections']['DEVOPS']
+connection_params= toml.load("/Users/mkobel/Library/Application Support/snowflake/config.toml")['connections']['DEVOPS']
 connection_params['private_key_file']=PRIVATE_KEY_FILE
 session = Session.builder.configs(connection_params).create()
 session.sql("USE DATABASE quickstart_prod")
 root = Root(session)
 
 # create views in Snowflake
-silver_schema = root.databases["quickstart_prod"].schemas["silver"]
+silver_schema = root.databases["DEMO_DEV"].schemas["silver"]
 silver_schema.user_defined_functions.create(
     map_city_to_airport, mode=CreateMode.or_replace
 )
