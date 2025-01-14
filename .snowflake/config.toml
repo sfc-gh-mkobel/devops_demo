@@ -1,5 +1,5 @@
-[connections]          
-accountname=<accountname>
-username=<user>
+[connections]                   
+accountname=<>
+username=<>
 authenticator = "SNOWFLAKE_JWT"
-private_key_path = <key_path>
+private_key_path = <>
