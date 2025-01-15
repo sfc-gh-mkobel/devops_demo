@@ -10,5 +10,5 @@ create or alter table gold_{{env}}_db.gold.vacation_spots (
   , avg_cloud_cover_pct float
   , precipitation_probability_pct float
   , avg_temperature_air_f float
-) data_retention_time_in_days = 1;
+) data_retention_time_in_days = {{t_vacation_spots_data_retention_days}};
 
