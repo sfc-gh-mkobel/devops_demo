@@ -1,4 +1,4 @@
-# DEVOPS DEMP
+# DEVOPS DEMO
 
 ## DEMO Setup Environment
 
