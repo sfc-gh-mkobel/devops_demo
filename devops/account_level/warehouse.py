@@ -5,12 +5,16 @@ import os
 import toml
 
 
-PRIVATE_KEY_FILE = os.getenv("SNOWFLAKE_PRIVATE_KEY_FILE")
-connection_params= toml.load(".snowflake/config.toml")['connections']['DEVOPS']
-connection_params['private_key_file']=PRIVATE_KEY_FILE
-session = Session.builder.configs(connection_params).create()
-session.sql("USE ROLE ACCOUNTADMIN")
-root = Root(session)
+# PRIVATE_KEY_FILE = os.getenv("SNOWFLAKE_PRIVATE_KEY_FILE")
+# connection_params= toml.load(".snowflake/config.toml")['connections']['DEVOPS']
+# connection_params['private_key_file']=PRIVATE_KEY_FILE
+# session = Session.builder.configs(connection_params).create()
+# session.sql("USE ROLE ACCOUNTADMIN")
+# root = Root(session)
+
+root = Root(Session.builder.getOrCreate())
+
+
 
 ingest_wh = Warehouse(name="analyze_wh")
 ingest_wh.warehouse_size = "SMALL"

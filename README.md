@@ -56,7 +56,14 @@ Run script explore_data/validate_results.sql  - this should return results else 
 ### GIT INTEGRATIONS
 - Review the GIT REPOSITORY creation in file demo_setup/01_setup_snowflake.sql
 
-## Create and Connect a Git Repository
+### Snowflake CLI
+Snowflake CLI overview
+```snow git -–help```
+```snow git list```
+
+###
+```snow git fetch DEMO_REPO```
+```snow get execute @DEMO_REPO/branches/main/devops -D “env=’dev’”```
 
 
 
