@@ -122,7 +122,7 @@ pipeline = [
             and arrival_airport = arrival_iata_airport_code
         where departure_airport = (
             select $1:airport 
-            from @quickstart_common.public.quickstart_repo/branches/main/data/home.json 
+            from @DEVOPS_DEMO_COMMON.public.demo_repo/branches/main/data/home.json 
                 (FILE_FORMAT => bronze.json_format))
         """,
     ),
@@ -239,16 +239,19 @@ pipeline = [
 # entry point for PythonAPI
 
 PRIVATE_KEY_FILE = os.getenv("SNOWFLAKE_PRIVATE_KEY_FILE")
-connection_params= toml.load("/Users/mkobel/Library/Application Support/snowflake/config.toml")['connections']['DEVOPS']
+connection_params= toml.load(".snowflake/config.toml")['connections']['DEVOPS']
 connection_params['private_key_file']=PRIVATE_KEY_FILE
 session = Session.builder.configs(connection_params).create()
-session.sql("USE DATABASE quickstart_prod")
+session.sql("USE ROLE ACCOUNTADMIN")
 root = Root(session)
 
+
 # create views in Snowflake
-silver_schema = root.databases["DEMO_DEV"].schemas["silver"]
+root.roles
+silver_schema = root.databases["DEVOPS_DEMO_COMMON"].schemas["silver"]
 silver_schema.user_defined_functions.create(
     map_city_to_airport, mode=CreateMode.or_replace
 )
+
 for view in pipeline:
     silver_schema.views.create(view, mode=CreateMode.or_replace)

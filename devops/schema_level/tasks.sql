@@ -1,15 +1,16 @@
 -- task to merge pipeline results into target table
 
-USE SCHEMA gold_{{env}}_db.gold;
+USE SCHEMA gold_prod_db.gold;
+
 
 create or alter task vacation_spots_update
   schedule = '1440 minute'
-  warehouse = 'quickstart_wh'
+  warehouse = 'analyze_wh'
   ERROR_ON_NONDETERMINISTIC_MERGE = false
   AS MERGE INTO vacation_spots USING (
     select *
-    from silver.flights_from_home flight
-    join silver.weather_joined_with_major_cities city on city.geo_name = flight.arrival_city
+    from DEVOPS_DEMO_COMMON.silver.flights_from_home flight
+    join DEVOPS_DEMO_COMMON.silver.weather_joined_with_major_cities city on city.geo_name = flight.arrival_city
     -- STEP 5: INSERT CHANGES HERE
   ) as harmonized_vacation_spots ON vacation_spots.city = harmonized_vacation_spots.arrival_city and vacation_spots.airport = harmonized_vacation_spots.arrival_airport
   WHEN MATCHED THEN
@@ -38,7 +39,7 @@ create or alter task vacation_spots_update
 -- task to select perfect vacation spot and send email with vacation plan
 -- NOTE: NOT ALL CORTEX ML MODELS MAY BE AVAILABLE ON ALL DEPLOYMENTS
 create or alter task email_notification
-  warehouse = 'quickstart_wh'
+  warehouse = 'analyze_wh'
   after vacation_spots_update
   as 
     begin

@@ -20,7 +20,6 @@ CREATE OR REPLACE GIT REPOSITORY DEVOPS_DEMO_COMMON.public.demo_repo
   API_INTEGRATION = git_api_integration
   ORIGIN = 'https://github.com/sfc-gh-mkobel/devops_demo';
 
-CREATE OR ALTER DATABASE DEMO_DEV;
 
 -- To monitor data pipeline's completion
 CREATE OR REPLACE NOTIFICATION INTEGRATION email_integration
@@ -42,3 +41,4 @@ CREATE OR ALTER STAGE bronze.raw;
 -- Copy file from GitHub to internal stage
 
 copy files into @bronze.raw from @DEVOPS_DEMO_COMMON.public.demo_repo/branches/main/data/airport_list.json;
+

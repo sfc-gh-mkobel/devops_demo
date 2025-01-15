@@ -1,0 +1,1 @@
+select * from gold_prod_db.gold.vacation_spots limit 10;
