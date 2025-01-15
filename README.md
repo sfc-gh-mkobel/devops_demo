@@ -38,19 +38,6 @@ Run scripts:
 - demo_setup/02_harmonize_data.py
 
 
-### Validate Demo Flow
-Run each script in directory devops:
-- devops/account_level/database.sql
-- devops/account_level/warehouse.py
-- devops/database_level/schema.sql
-- devops/schema_level/table_vacation_spots.sql
-- devops/schema_level/tasks.sql
-
-Run script explore_data/validate_results.sql  - this should return results else need to check why the table is empthy
-
-
-
-
 ## DEMO
 
 ### GIT INTEGRATIONS
@@ -63,7 +50,11 @@ Snowflake CLI overview
 
 ###
 ```snow git fetch DEMO_REPO```
-```snow get execute @DEMO_REPO/branches/main/devops -D “env=’dev’”```
+```snow git execute @DEMO_REPO/branches/main/devops -D "env=’dev’"```
+
+
+
+
 
 
 
