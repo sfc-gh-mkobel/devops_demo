@@ -1,12 +1,9 @@
 from snowflake.core import Root
 from snowflake.snowpark import Session
 from snowflake.core.warehouse import Warehouse
-import os
 
 
 root = Root(Session.builder.getOrCreate())
-
-
 
 ingest_wh = Warehouse(name="analyze_wh")
 ingest_wh.warehouse_size = "SMALL"
