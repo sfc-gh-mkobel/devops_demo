@@ -1,1 +1,1 @@
-create or alter database gold_prod_db;
+create or alter database gold_{{env}}_db;

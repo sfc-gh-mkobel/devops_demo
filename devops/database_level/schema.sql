@@ -1,1 +1,1 @@
-create or alter schema gold_prod_db.gold;
+create or alter schema gold_{{env}}_db.gold;

@@ -1,6 +1,6 @@
 -- task to merge pipeline results into target table
 
-USE SCHEMA gold_prod_db.gold;
+USE SCHEMA gold_{{env}}_db.gold;
 
 
 create or alter task vacation_spots_update
