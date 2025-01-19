@@ -1,0 +1,1 @@
+create or alter schema gold_dev_db.gold;
