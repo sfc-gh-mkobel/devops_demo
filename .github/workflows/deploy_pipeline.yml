@@ -35,12 +35,9 @@ jobs:
           cli-version: "latest"
           default-config-file-path: ".snowflake/config.toml"
 
-      # List git repositories
-      - name: List repository
-        run: |
-          print("---------- YES sd")
-          log = open(".snowflake/config.toml", "r").read()
-          print(log)
+      - name: 'Show updated config.toml'
+        run:
+          cat ~/.snowflake/config.toml
       
       # Update Snowflake's copy of the repository
       - name: Fetch repository changes
