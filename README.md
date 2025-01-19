@@ -74,6 +74,7 @@ Snowflake CLI overview
 - Modify tasks and add new new column. Script: devops/schema_level/tasks.sql
 - Run the following
 ```snow git fetch DEMO_REPO```
+- Explain and run the command
 ```snow git execute @DEMO_REPO/branches/dev/devops```
 - Open snowsight/VS and review the change
 
