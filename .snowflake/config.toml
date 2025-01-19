@@ -1,4 +1,4 @@
-[connections.default]
+[connections.myconnection]
 accountname=""
 user=""
 authenticator = "SNOWFLAKE_JWT"
