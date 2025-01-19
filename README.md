@@ -72,6 +72,8 @@ Snowflake CLI overview
 
 
 ### CI/CD Using Git Actions
+[Managing Snowflake connections](https://docs.snowflake.com/en/developer-guide/snowflake-cli/connecting/configure-connections)
+
 TBD
 
 
