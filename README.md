@@ -65,15 +65,8 @@ Snowflake CLI overview
 ### Database Change Management
 
 - Review scripts in devops directory
-- Review EXECUTE IMMEDIATE FROM command
 - Declarative Pipeline Evolution using create or alter command
-#### Separate Dev and Prod Environments
-- Jinja Templating in Snowflake for separate Environments
-- Run the following
-```snow git fetch DEMO_REPO```
-```snow git execute @DEMO_REPO/branches/main/devops/schema_level -D "env=’dev’ -D "t_vacation_spots_data_retention_days=0"```
-- Open snowsight/VS and review the new created objects
-
+- Review EXECUTE IMMEDIATE FROM command
 
 ### Declarative Pipeline Evolution using create or alter command
 
@@ -81,13 +74,20 @@ Snowflake CLI overview
 - Modify tasks and add new new column. Script: devops/schema_level/tasks.sql
 - Run the following
 ```snow git fetch DEMO_REPO```
-```snow git execute @DEMO_REPO/branches/main/devops -D "env='dev'" -D "t_vacation_spots_data_retention_days=0"```
+```snow git execute @DEMO_REPO/branches/dev/devops```
 - Open snowsight/VS and review the change
 
+#### Separate Dev and Prod Environments
+- Switch to main branch
+- Jinja Templating in Snowflake for separate Environments
+- Run the following
+```snow git fetch DEMO_REPO```
+```snow git execute @DEMO_REPO/branches/main/devops/schema_level -D "env=’dev’ -D "t_vacation_spots_data_retention_days=0"```
+- Open snowsight/VS and review the new created objects
 
-"@${REPO_NAME}/branches/${BRANCH_NAME}/devops/account_level/database.sql " \
-            -D "env='${BRANCH_NAME}'" \
-            -D "t_vacation_spots_data_retention_days=${RETENTION_TIME}"
+
+
+
 
 
 ### CI/CD Using Git Actions
