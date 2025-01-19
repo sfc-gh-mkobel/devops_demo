@@ -25,13 +25,11 @@ jobs:
       
     steps:
       # Checkout step is necessary if you want to use a config file from your repo
-      
-      
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
             python-version: 3.8
       
@@ -58,6 +56,11 @@ jobs:
         run:
           snow git fetch "${REPO_NAME}"
 
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+      
       # Deploy pipeline with branch specific parameters
       - name: Deploy data pipeline to ${{ github.ref_name }}
         run: |
