@@ -71,6 +71,11 @@ Snowflake CLI overview
 - Open snowsight/VS and review the change
 
 
+"@${REPO_NAME}/branches/${BRANCH_NAME}/devops/account_level/database.sql " \
+            -D "env='${BRANCH_NAME}'" \
+            -D "t_vacation_spots_data_retention_days=${RETENTION_TIME}"
+
+
 ### CI/CD Using Git Actions
 [Managing Snowflake connections](https://docs.snowflake.com/en/developer-guide/snowflake-cli/connecting/configure-connections)
 

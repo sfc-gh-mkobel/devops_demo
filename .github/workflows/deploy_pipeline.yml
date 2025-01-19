@@ -57,6 +57,7 @@ jobs:
           else
             RETENTION_TIME=0
           fi
+          snow git execute @DEMO_REPO/branches/main/devops -D "env='dev'" -D "t_vacation_spots_data_retention_days=0"
           snow git execute \
             "@${REPO_NAME}/branches/${BRANCH_NAME}/devops/account_level/database.sql " \
             -D "env='${BRANCH_NAME}'" \
