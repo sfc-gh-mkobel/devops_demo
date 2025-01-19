@@ -1,0 +1,5 @@
+[connections.default]
+accountname=""
+user=""
+authenticator = "SNOWFLAKE_JWT"
+private_key_path = ""
