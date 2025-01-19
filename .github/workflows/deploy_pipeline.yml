@@ -27,16 +27,13 @@ jobs:
       # Checkout step is necessary if you want to use a config file from your repo
       
       
-      # - uses: actions/setup-python@v4
-      #   with: 
-      #     python-version: 3.12
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-            python-version: 3.12
+            python-version: 3.8
       
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
