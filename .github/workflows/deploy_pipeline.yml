@@ -38,6 +38,10 @@ jobs:
       - name: 'Show updated config.toml'
         run:
           cat ~/.snowflake/config.toml
+
+      - name: 'Show Connection test'
+        run:
+          snow connection test  
       
       # Update Snowflake's copy of the repository
       - name: Fetch repository changes
