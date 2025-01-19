@@ -38,7 +38,7 @@ jobs:
       # List git repositories
       - name: List repository
         run:
-          snow git list
+          snow git --debug list
       
           # Update Snowflake's copy of the repository
       - name: Fetch repository changes
