@@ -35,7 +35,12 @@ jobs:
           cli-version: "latest"
           default-config-file-path: ".snowflake/config.toml"
 
-      # Update Snowflake's copy of the repository
+      # List git repositories
+      - name: List repository
+        run:
+          snow git list
+      
+          # Update Snowflake's copy of the repository
       - name: Fetch repository changes
         run:
           snow git fetch "${REPO_NAME}"
