@@ -54,7 +54,7 @@ Target Of Data
 - Explain about API INTEGRATION
 - Explain about GIT REPOSITORY
 - Review the GIT REPOSITORY creation in file /demo_setup/03_git_integration.sql
--- Open snowsight and review GIT REPOSITORY object 
+- Open snowsight and review GIT REPOSITORY object 
 
 ### Snowflake CLI
 Snowflake CLI tool for developers 
@@ -66,19 +66,18 @@ Snowflake CLI overview
 
 - switch to branch dev
 - Review scripts in devops directory
-- Review EXECUTE IMMEDIATE FROM command
 - Declarative Pipeline Evolution using create or alter command
 
 #### Declarative Using create or alter command
 - Run describe table command in file sql explore_data/validate_results.sql
 - Modify table vacation_spots and add new column. Script: devops/schema_level/table_vacation_spots.sql
 - Modify tasks and add new new column. Script: devops/schema_level/tasks.sql
-- Run the following
+- Run the following:
 ```git Add -A```
 ```git commit -m "changed table and task```
 ```git push```
 ```snow git fetch DEMO_REPO```
-```snow git execute @DEMO_REPO/branches/main/devops_hardcoded"```
+```snow git execute @DEMO_REPO/branches/dev/devops"```
 - Open snowsight/VS and review the change
 
 #### Separate Dev and Prod Environments
