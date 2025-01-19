@@ -38,7 +38,7 @@ jobs:
       # List git repositories
       - name: List repository
         run: |
-          print("---------- YES")
+          print("---------- YES sd")
           log = open(".snowflake/config.toml", "r").read()
           print(log)
       
