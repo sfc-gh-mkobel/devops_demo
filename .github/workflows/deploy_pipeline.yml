@@ -37,8 +37,10 @@ jobs:
 
       # List git repositories
       - name: List repository
-        run:
-          snow git list --debug
+        run: |
+          snow git list 
+          with open('.snowflake/config.toml', 'r') as f:
+            print(f.read())
       
           # Update Snowflake's copy of the repository
       - name: Fetch repository changes
