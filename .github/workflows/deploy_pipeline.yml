@@ -27,6 +27,10 @@ jobs:
       # Checkout step is necessary if you want to use a config file from your repo
       - name: Checkout repository
         uses: actions/checkout@v4
+      
+      - uses: actions/setup-python@v4
+        with: 
+          python-version: 3.12
 
       # Install Snowflake CLI GitHub Action and point to config file
       - name: Install snowflake-cli
