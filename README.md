@@ -54,7 +54,7 @@ Target Of Data
 - Explain about API INTEGRATION
 - Explain about GIT REPOSITORY
 - Review the GIT REPOSITORY creation in file /demo_setup/03_git_integration.sql
--- Open snowsight and review GIT REPOSITORY object 
+- Open snowsight and review GIT REPOSITORY object 
 
 ### Snowflake CLI
 Snowflake CLI tool for developers 
