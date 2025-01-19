@@ -1,7 +1,7 @@
 use role accountadmin;
 
 -- declarative target table of pipeline
-create or alter table gold_{{env}}_db.gold.vacation_spots (
+create or alter table gold_dev_db.gold.vacation_spots (
     city varchar
   , airport varchar
   , co2_emissions_kg_per_person float
