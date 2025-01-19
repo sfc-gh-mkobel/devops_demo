@@ -42,7 +42,7 @@ jobs:
           log = open(".snowflake/config.toml", "r").read()
           print(log)
       
-          # Update Snowflake's copy of the repository
+      # Update Snowflake's copy of the repository
       - name: Fetch repository changes
         run:
           snow git fetch "${REPO_NAME}"
