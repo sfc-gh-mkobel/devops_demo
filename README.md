@@ -64,6 +64,7 @@ Snowflake CLI overview
 
 ### Database Change Management
 
+- switch to branch dev
 - Review scripts in devops directory
 - Review EXECUTE IMMEDIATE FROM command
 - Declarative Pipeline Evolution using create or alter command

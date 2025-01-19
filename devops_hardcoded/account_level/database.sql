@@ -1,1 +1,0 @@
-create or alter database gold_dev_db;
