@@ -40,10 +40,24 @@ Run scripts:
 
 ## DEMO
 
+### Review Dataset
+
+- We will do basic review over the data
+- Explain about the source of data from marketplace
+Source of Data:
+ - Open file explore_data/review_marketplace_data.sql
+
+Target Of Data
+- Table that wil provide me details about vacation spots and will join both source tables
+
 ### GIT INTEGRATIONS
-- Review the GIT REPOSITORY creation in file demo_setup/01_setup_snowflake.sql
+- Explain about API INTEGRATION
+- Explain about GIT REPOSITORY
+- Review the GIT REPOSITORY creation in file /demo_setup/03_git_integration.sql
+-- Open snowsight and review GIT REPOSITORY object 
 
 ### Snowflake CLI
+Snowflake CLI tool for developers 
 Snowflake CLI overview
 ```snow git -–help```
 ```snow git list```
@@ -57,7 +71,7 @@ Snowflake CLI overview
 - Jinja Templating in Snowflake for separate Environments
 - Run the following
 ```snow git fetch DEMO_REPO```
-```snow git execute @DEMO_REPO/branches/main/devops -D "env=’dev’ -D "t_vacation_spots_data_retention_days=0"```
+```snow git execute @DEMO_REPO/branches/main/devops/schema_level -D "env=’dev’ -D "t_vacation_spots_data_retention_days=0"```
 - Open snowsight/VS and review the new created objects
 
 
