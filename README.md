@@ -54,7 +54,7 @@ Target Of Data
 - Explain about API INTEGRATION
 - Explain about GIT REPOSITORY
 - Review the GIT REPOSITORY creation in file /demo_setup/03_git_integration.sql
--- Open snowsight and review GIT REPOSITORY object 
+- Open snowsight and review GIT REPOSITORY object 
 
 ### Snowflake CLI
 Snowflake CLI tool for developers 
@@ -64,86 +64,38 @@ Snowflake CLI overview
 
 ### Database Change Management
 
+- switch to branch dev
 - Review scripts in devops directory
 - Declarative Pipeline Evolution using create or alter command
-- Review EXECUTE IMMEDIATE FROM command
 
-### Declarative Pipeline Evolution using create or alter command
-
+#### Declarative Using create or alter command
+- Run describe table command in file sql explore_data/validate_results.sql
 - Modify table vacation_spots and add new column. Script: devops/schema_level/table_vacation_spots.sql
 - Modify tasks and add new new column. Script: devops/schema_level/tasks.sql
-- Run the following
+- Run the following:
+```git Add -A```
+```git commit -m "changed table and task```
+```git push```
 ```snow git fetch DEMO_REPO```
-- Explain and run the command
-```snow git execute @DEMO_REPO/branches/dev/devops```
+```snow git execute @DEMO_REPO/branches/dev/devops"```
 - Open snowsight/VS and review the change
 
 #### Separate Dev and Prod Environments
-- Switch to main branch
 - Jinja Templating in Snowflake for separate Environments
 - Run the following
 ```snow git fetch DEMO_REPO```
-```snow git execute @DEMO_REPO/branches/main/devops/schema_level -D "env=’dev’ -D "t_vacation_spots_data_retention_days=0"```
+```snow git execute @DEMO_REPO/branches/main/devops -D "env='stage'" -D "t_vacation_spots_data_retention_days=0"```
 - Open snowsight/VS and review the new created objects
 
 
-
-
-
-
 ### CI/CD Using Git Actions
+
+Review the pipeline 
+- Connection secrets
+- Git [secrets](https://github.com/sfc-gh-mkobel/devops_demo/settings/secrets/actions)
+- 
+
+
 [Managing Snowflake connections](https://docs.snowflake.com/en/developer-guide/snowflake-cli/connecting/configure-connections)
 
 TBD
-
-
-
-
-
-
-
-
-
-
-# ---------------- DEMO IDEAS -----------------------------------------
-```sql
-USE ROLE ACCOUNTADMIN;
-
-CREATE OR ALTER DATABASE DEVOPS_COMMON;
-
-
-CREATE OR REPLACE API INTEGRATION git_api_integration
-  API_PROVIDER = git_https_api
-  API_ALLOWED_PREFIXES = ('https://github.com/sfc-gh-mkobel')
-  ENABLED = TRUE;
-
-CREATE OR REPLACE GIT REPOSITORY DEVOPS_COMMON.public.devops_demo_repo
-  API_INTEGRATION = git_api_integration
-  ORIGIN = 'https://github.com/sfc-gh-mkobel/devops_demo';
-```
-
-
-## Demo Steps
-### Snowflake CLI
-Snow git -–help
-
-Present a create_or_alter table python script
-Modify the table - ad new column
-From terminal run:
-Git add && git commit -m “object changes”
-Git push
-Snow git list
-Snow git fetch git_repoi
-Snow get execute @git_repo/branches/demo_branch/devops -D “env=’dev’”
-View Results
-Open table in snowsight or vs code
-
-
-Python and SQL to manage snowflake objects
-Git integrations
-Database Change Management -  CREATE OR ALTER command 
-Separate Dev and Prod Environments - Jinja Templating in Snowflake
-Deployment Automation - CI/CD pipeline
-
-
-  
