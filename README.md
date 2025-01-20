@@ -84,11 +84,18 @@ Snowflake CLI overview
 - Jinja Templating in Snowflake for separate Environments
 - Run the following
 ```snow git fetch DEMO_REPO```
-```snow git execute @DEMO_REPO/branches/main/devops/schema_level -D "env=’dev’ -D "t_vacation_spots_data_retention_days=0"```
+```snow git execute @DEMO_REPO/branches/main/devops -D "env='stage'" -D "t_vacation_spots_data_retention_days=0"```
 - Open snowsight/VS and review the new created objects
 
 
 ### CI/CD Using Git Actions
+
+Review the pipeline 
+- Connection secrets
+- Git [secrets](https://github.com/sfc-gh-mkobel/devops_demo/settings/secrets/actions)
+- 
+
+
 [Managing Snowflake connections](https://docs.snowflake.com/en/developer-guide/snowflake-cli/connecting/configure-connections)
 
 TBD
