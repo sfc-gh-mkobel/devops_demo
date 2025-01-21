@@ -11,3 +11,6 @@ CREATE OR REPLACE API INTEGRATION git_api_integration
 CREATE OR REPLACE GIT REPOSITORY DEVOPS_DEMO_COMMON.public.demo_repo
   API_INTEGRATION = git_api_integration
   ORIGIN = 'https://github.com/sfc-gh-mkobel/devops_demo';
+
+
+SHOW GIT REPOSITORIES;
