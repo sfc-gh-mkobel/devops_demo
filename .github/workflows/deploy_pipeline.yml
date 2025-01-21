@@ -10,8 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  Deploy-Database-Change-Management-Workflow:
+    runs-on: ubuntu-20.04
 
     env:
       env:
