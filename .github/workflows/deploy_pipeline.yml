@@ -14,8 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      env:
+      PYTHON_VERSION: '3.8'
       REPO_NAME: "DEMO_REPO"
-
       # Read connection secrets
       SNOWFLAKE_CONNECTIONS_MYCONNECTION_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
       SNOWFLAKE_CONNECTIONS_MYCONNECTION_USER: ${{ secrets.SNOWFLAKE_USER }}
