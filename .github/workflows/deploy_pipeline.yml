@@ -56,6 +56,9 @@ jobs:
         with:
           python-version: 3.8
       
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+      
       # Deploy pipeline with branch specific parameters
       - name: Deploy data pipeline to ${{ github.ref_name }}
         run: |
