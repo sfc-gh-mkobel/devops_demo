@@ -16,7 +16,7 @@ jobs:
 
     env:
       REPO_NAME: "DEMO_REPO"
-      PYTHON_VERSION: '3.8'
+      #PYTHON_VERSION: '3.8'
       # Read connection secrets
       SNOWFLAKE_CONNECTIONS_MYCONNECTION_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
       SNOWFLAKE_CONNECTIONS_MYCONNECTION_USER: ${{ secrets.SNOWFLAKE_USER }}
@@ -28,14 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-            python-version: 3.8
-      
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
-    
+        
       # Install Snowflake CLI GitHub Action and point to config file
       - name: Install snowflake-cli
         uses: Snowflake-Labs/snowflake-cli-action@v1.5
@@ -52,10 +45,10 @@ jobs:
         run:
           snow git fetch "${REPO_NAME}"
 
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.8
+      # - name: Set up Python 3.8
+      #   uses: actions/setup-python@v4
+      #   with:
+      #     python-version: 3.8
       
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
