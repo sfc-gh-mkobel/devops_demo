@@ -10,9 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  Deploy-Database-Change-Management-Workflow:
+  deploy:
     runs-on: ubuntu-20.04
-
     env:
       PYTHON_VERSION: '3.8'
       REPO_NAME: "DEMO_REPO"
