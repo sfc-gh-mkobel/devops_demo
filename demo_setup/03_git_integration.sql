@@ -13,4 +13,7 @@ CREATE OR REPLACE GIT REPOSITORY DEVOPS_DEMO_COMMON.public.demo_repo
   ORIGIN = 'https://github.com/sfc-gh-mkobel/devops_demo';
 
 
+
+SHOW API INTEGRATIONS;
+
 SHOW GIT REPOSITORIES;
