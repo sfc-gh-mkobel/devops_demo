@@ -77,7 +77,7 @@ Snowflake CLI overview
 ```git commit -m "changed table and task```
 ```git push```
 ```snow git fetch DEMO_REPO```
-```snow git execute @DEMO_REPO/branches/dev/devops"```
+```snow git execute @DEMO_REPO/branches/dev/devops```
 - Open snowsight/VS and review the change
 
 #### Separate Dev and Prod Environments
