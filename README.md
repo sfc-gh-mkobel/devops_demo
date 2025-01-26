@@ -80,6 +80,7 @@ Snowflake CLI overview
 ```snow git execute @DEMO_REPO/branches/dev/devops```
 - Open snowsight/VS and review the change
 
+
 #### Separate Dev and Prod Environments
 - Jinja Templating in Snowflake for separate Environments
 - Run the following
