@@ -1,7 +1,5 @@
 USE ROLE ACCOUNTADMIN;
 
-
-
 -- API integration is needed for GitHub integration
 CREATE OR REPLACE API INTEGRATION git_api_integration
   API_PROVIDER = git_https_api
