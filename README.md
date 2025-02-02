@@ -84,7 +84,7 @@ Snowflake CLI overview
 - Jinja Templating in Snowflake for separate Environments
 - Run the following
 ```snow git fetch DEMO_REPO```
-```snow git execute @DEMO_REPO/branches/main/devops -D "env='stage'" -D "t_vacation_spots_data_retention_days=0"```
+```snow git execute @DEMO_REPO/branches/main/devops -D "env='prod'" -D "t_vacation_spots_data_retention_days=1"```
 - Open snowsight/VS and review the new created objects
 
 
