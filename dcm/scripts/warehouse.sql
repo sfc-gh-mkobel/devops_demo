@@ -1,1 +1,1 @@
-create or alter warehouse analyze_wh warehouse_size='XSMALL' INITIALLY_SUSPENDED=false;
+create or alter warehouse analyze_wh warehouse_size='XSMALL' INITIALLY_SUSPENDED=true;
