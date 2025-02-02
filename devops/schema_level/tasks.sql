@@ -21,6 +21,7 @@ create or alter task vacation_spots_update
       , vacation_spots.avg_cloud_cover_pct = harmonized_vacation_spots.avg_cloud_cover_pct
       , vacation_spots.precipitation_probability_pct = harmonized_vacation_spots.precipitation_probability_pct
       , vacation_spots.avg_temperature_air_f = harmonized_vacation_spots.avg_temperature_air_f
+      -- STEP 5: INSERT CHANGES HERE
   WHEN NOT MATCHED THEN 
     INSERT VALUES (
         harmonized_vacation_spots.arrival_city
@@ -31,6 +32,7 @@ create or alter task vacation_spots_update
       , harmonized_vacation_spots.avg_cloud_cover_pct
       , harmonized_vacation_spots.precipitation_probability_pct
       , harmonized_vacation_spots.avg_temperature_air_f
+      -- STEP 5: INSERT CHANGES HERE
     );
 
 
