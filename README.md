@@ -72,12 +72,6 @@ Snowflake CLI overview
 - Run describe table command in file sql explore_data/validate_results.sql
 - Modify table vacation_spots and add new column. Script: devops/schema_level/table_vacation_spots.sql
 - Modify tasks and add new new column. Script: devops/schema_level/tasks.sql
-- Run the following:
-```git Add -A```
-```git commit -m "changed table and task```
-```git push```
-```snow git fetch DEMO_REPO```
-```snow git execute @DEMO_REPO/branches/dev/devops```
 - Open snowsight/VS and review the change
 
 #### Separate Dev and Prod Environments
